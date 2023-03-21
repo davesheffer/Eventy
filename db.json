@@ -1,0 +1,41 @@
+{
+  "Events": [
+    {
+      "location": "adasdas",
+      "createdAt": "2023-03-20",
+      "category": "asdasd",
+      "timing": "adasd",
+      "id": 1
+    }
+  ],
+  "Users": [
+    {
+      "id": 1,
+      "initials": "DS",
+      "name": "dave sheffer",
+      "email": "d@ylm.co.iil",
+      "mobile": "123-456-7890"
+    },
+    {
+      "id": 2,
+      "initials": "FD",
+      "name": "flee doni",
+      "email": "d@ylm.co.iil",
+      "mobile": "123-456-7890"
+    },
+    {
+      "id": 3,
+      "initials": "RN",
+      "name": "ronen alfred",
+      "email": "d@ylm.co.iil",
+      "mobile": "123-456-7890"
+    },
+    {
+      "id": 4,
+      "initials": "GH",
+      "name": "gadi hay",
+      "email": "d@ylm.co.iil",
+      "mobile": "123-456-7890"
+    }
+  ]
+}
