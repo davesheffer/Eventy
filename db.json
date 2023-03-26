@@ -1,27 +1,18 @@
 {
   "Events": [
     {
-      "location": "sadsad",
-      "createdAt": "2023-03-25",
-      "category": "asdasd",
-      "timing": "asdasd",
-      "status": "closed",
+      "location": "dasdas",
+      "createdAt": "2023-03-26",
+      "category": "adasd",
+      "timing": "asdas",
+      "id": 1
+    },
+    {
+      "location": "asdasd",
+      "createdAt": "2023-03-26",
+      "category": "asdsad",
+      "timing": "adasdas",
       "id": 2
-    },
-    {
-      "location": "",
-      "createdAt": "2023-03-25",
-      "category": "",
-      "timing": "",
-      "status": "Opened",
-      "id": 3
-    },
-    {
-      "location": "sdfds",
-      "createdAt": "2023-03-25",
-      "category": "sfsd",
-      "timing": "sfdf",
-      "id": 4
     }
   ],
   "Users": [
@@ -47,60 +38,18 @@
       "mobile": "123-456-7890"
     },
     {
-      "id": 4,
-      "initials": "GH",
-      "name": "gadi hay",
-      "email": "d@ylm.co.iil",
-      "mobile": "123-456-7890"
+      "initials": "DA",
+      "name": "david sheffer",
+      "email": "dave@ylm.co.il",
+      "mobile": "0547094300",
+      "id": 4
     },
     {
-      "initials": "adsda",
-      "name": "adsda",
-      "email": "adsa",
-      "mobile": "ads",
+      "initials": "DA",
+      "name": "david sheffer",
+      "email": "dave@ylm.co.il",
+      "mobile": "0547094300",
       "id": 5
-    },
-    {
-      "initials": "da",
-      "name": "daas",
-      "email": "asdas",
-      "mobile": "asdasd",
-      "id": 6
-    },
-    {
-      "initials": "da",
-      "name": "dasfgdsag",
-      "email": "gdsg",
-      "mobile": "dsg",
-      "id": 7
-    },
-    {
-      "initials": "sD",
-      "name": "sdfsd",
-      "email": "fsdfsd",
-      "mobile": "dsg",
-      "id": 8
-    },
-    {
-      "initials": "SF",
-      "name": "sfdfs",
-      "email": "sdfsdf",
-      "mobile": "sdfsdsdf",
-      "id": 9
-    },
-    {
-      "initials": "AS",
-      "name": "asdas",
-      "email": "adsad",
-      "mobile": "adasd",
-      "id": 10
-    },
-    {
-      "initials": "SD",
-      "name": "sdfsdf",
-      "email": "sfdsf",
-      "mobile": "sdfsd",
-      "id": 11
     }
   ]
 }

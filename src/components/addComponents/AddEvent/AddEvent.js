@@ -28,6 +28,8 @@ const AddEvent = ({ events, setEvents, menuToggle, setMenuToggle }) => {
 				setCreatedAt(moment().format('yyyy-MM-DD'));
 				setCategory('');
 				setTiming('');
+				setMenuToggle(false)
+
 			})
 			.then(navigate('/'))
 			.then(() => console.log(event));
@@ -47,14 +49,14 @@ const AddEvent = ({ events, setEvents, menuToggle, setMenuToggle }) => {
 		'transition-all',
 
 		{
-			'-right-1/2': !menuToggle,
+			'translate-x-full': !menuToggle,
 		}
 	);
 	return (
 		<div className={menuToggleClasses}>
 			<h1 className='text-4xl font-bold mb-4 '>Add Event</h1>
 			<AiFillCloseSquare
-				className='absolute right-4 top-4 text-4xl  cursor-pointer text-emerald-500 '
+				className='absolute right-4 top-4 text-4xl cursor-pointer text-emerald-500 '
 				onClick={() => setMenuToggle(false)}
 			/>
 			<form onSubmit={handleSubmit} className='flex flex-col'>

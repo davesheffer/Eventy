@@ -23,6 +23,10 @@ const AddUser = ({ users, setUsers, menuToggle, setMenuToggle }) => {
 		})
 			.then(() => {
 				setUsers([...users, (users = { id: lastId + 1, ...user })]);
+				setMenuToggle(false)
+				setName('')
+				setEmail("")
+				setMobile("")
 			})
 
 			.then(() => console.log(user));
@@ -42,7 +46,7 @@ const AddUser = ({ users, setUsers, menuToggle, setMenuToggle }) => {
 		'transition-all',
 
 		{
-			'-right-1/2': !menuToggle,
+			'translate-x-full': !menuToggle,
 		}
 	);
 	return (
