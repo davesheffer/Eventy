@@ -1,5 +1,4 @@
 import React from "react";
-import { HiOutlineLockClosed } from "react-icons/hi";
 import { AiFillDelete } from "react-icons/ai";
 export default function Card({ id, location, createdAt, timing, category, deleteEvent }) {
     return (

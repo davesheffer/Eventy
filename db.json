@@ -1,54 +1,67 @@
 {
   "Events": [
     {
-      "location": "dasdas",
+      "location": "sdfsdf",
       "createdAt": "2023-03-26",
-      "category": "adasd",
-      "timing": "asdas",
+      "category": "sfsdf",
+      "timing": "sfsdfsdf",
       "id": 1
-    },
-    {
-      "location": "asdasd",
-      "createdAt": "2023-03-26",
-      "category": "asdsad",
-      "timing": "adasdas",
-      "id": 2
     }
   ],
   "Users": [
     {
-      "id": 1,
       "initials": "DS",
-      "name": "dave sheffer",
-      "email": "d@ylm.co.iil",
-      "mobile": "123-456-7890"
+      "name": "dsad",
+      "email": "asd",
+      "mobile": "sasdsad",
+      "id": 14
+    }
+  ],
+  "Locations": [
+    {
+      "locationName": "ramat gan",
+      "id": 2
     },
     {
-      "id": 2,
-      "initials": "FD",
-      "name": "flee doni",
-      "email": "d@ylm.co.iil",
-      "mobile": "123-456-7890"
+      "locationName": "petach tikva",
+      "id": 3
     },
     {
-      "id": 3,
-      "initials": "RN",
-      "name": "ronen alfred",
-      "email": "d@ylm.co.iil",
-      "mobile": "123-456-7890"
-    },
-    {
-      "initials": "DA",
-      "name": "david sheffer",
-      "email": "dave@ylm.co.il",
-      "mobile": "0547094300",
+      "locationName": "London",
       "id": 4
     },
     {
-      "initials": "DA",
-      "name": "david sheffer",
-      "email": "dave@ylm.co.il",
-      "mobile": "0547094300",
+      "locationName": "גדשגשד",
+      "id": 5
+    },
+    {
+      "locationName": "sdasda",
+      "id": 6
+    },
+    {
+      "locationName": "asdsad",
+      "id": 7
+    }
+  ],
+  "Categories": [
+    {
+      "categoryName": "Maintenance ",
+      "id": 1
+    },
+    {
+      "categoryName": "prevetive maintenance ",
+      "id": 2
+    },
+    {
+      "categoryName": "cleaning ",
+      "id": 3
+    },
+    {
+      "categoryName": "asdasd",
+      "id": 4
+    },
+    {
+      "categoryName": "daasdas",
       "id": 5
     }
   ]
