@@ -6,6 +6,13 @@
       "category": "sfsdf",
       "timing": "sfsdfsdf",
       "id": 1
+    },
+    {
+      "location": "asdsd",
+      "createdAt": "2023-03-29",
+      "category": "asdas",
+      "timing": "asdasd",
+      "id": 2
     }
   ],
   "Users": [
@@ -19,35 +26,20 @@
   ],
   "Locations": [
     {
-      "locationName": "ramat gan",
-      "id": 2
+      "locationName": "london",
+      "id": 6,
+      "name": "adsad"
     },
     {
-      "locationName": "petach tikva",
-      "id": 3
-    },
-    {
-      "locationName": "London",
-      "id": 4
-    },
-    {
-      "locationName": "גדשגשד",
-      "id": 5
-    },
-    {
-      "locationName": "sdasda",
-      "id": 6
-    },
-    {
-      "locationName": "asdsad",
+      "locationName": "324234",
       "id": 7
+    },
+    {
+      "locationName": "dfsdf",
+      "id": 8
     }
   ],
   "Categories": [
-    {
-      "categoryName": "Maintenance ",
-      "id": 1
-    },
     {
       "categoryName": "prevetive maintenance ",
       "id": 2

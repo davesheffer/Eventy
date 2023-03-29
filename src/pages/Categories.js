@@ -36,7 +36,10 @@ const Categories = ({ menuToggle, setMenuToggle, menuToggleClasses }) => {
                 {categories.length <= 0 && <div> No Categories</div>}
                 {categories.map(category => {
                     return (
-                        <div className="flex items-center justify-between border border-b-gray-900">
+                        <div
+                            key={category.id}
+                            className="flex items-center justify-between border border-b-gray-900"
+                        >
                             <h1>{category.categoryName}</h1>
                             <AiFillDelete
                                 className="text-2xl ml-[150px] cursor-pointer hover:text-emerald-600"
