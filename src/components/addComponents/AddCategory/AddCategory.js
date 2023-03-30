@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import classNames from 'classnames';
 import { AiFillCloseSquare } from 'react-icons/ai';
+import classNames from 'classnames';
 
 const AddCategory = ({
     categories,
@@ -8,14 +8,15 @@ const AddCategory = ({
     menuToggle,
     setMenuToggle,
 }) => {
+    const lastId = categories[categories.length - 1]?.id || 0;
     const [categoryName, setCategoryName] = useState('');
 
-    const lastId = categories[categories.length - 1]?.id || 0;
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
+
         const category = { categoryName };
 
-        fetch('http://localhost:8000/categories', {
+        await fetch('http://localhost:8000/Categories', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(category),
@@ -25,9 +26,10 @@ const AddCategory = ({
                     ...categories,
                     (categories = { id: lastId + 1, ...category }),
                 ]);
-                setCategoryName('');
                 setMenuToggle(false);
+                setCategoryName('');
             })
+
             .then(() => console.log(category));
     };
 
@@ -52,14 +54,14 @@ const AddCategory = ({
         <div className={menuToggleClasses}>
             <h1 className="text-4xl font-bold mb-4 ">Add Category</h1>
             <AiFillCloseSquare
-                className="absolute right-4 top-4 text-4xl cursor-pointer text-emerald-500 "
+                className="absolute right-4 top-4 text-4xl  cursor-pointer text-emerald-500 "
                 onClick={() => setMenuToggle(false)}
             />
             <form onSubmit={handleSubmit} className="flex flex-col">
                 <input
                     className="p-2 mb-4"
                     type="text"
-                    placeholder="Category Name"
+                    placeholder="Name"
                     value={categoryName}
                     onChange={e => setCategoryName(e.target.value)}
                 />
@@ -71,4 +73,5 @@ const AddCategory = ({
         </div>
     );
 };
+
 export default AddCategory;

@@ -54,7 +54,6 @@ const Locations = () => {
                 />
             )}
 
-            <div className={menuToggleClasses}></div>
             <div className="container mx-auto relative">
                 <h1 className="text-2xl font-bold py-4">Locations</h1>
                 {loading && <div>Loading</div>}

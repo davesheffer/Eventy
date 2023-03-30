@@ -37,24 +37,21 @@
     {
       "locationName": "dfsdf",
       "id": 8
+    },
+    {
+      "locationName": "דשגדשג",
+      "id": 9
     }
   ],
   "Categories": [
     {
-      "categoryName": "prevetive maintenance ",
-      "id": 2
-    },
-    {
-      "categoryName": "cleaning ",
-      "id": 3
+      "categoryName": "facebook",
+      "id": 5,
+      "editCategoryName": "dave sheffer"
     },
     {
       "categoryName": "asdasd",
-      "id": 4
-    },
-    {
-      "categoryName": "daasdas",
-      "id": 5
+      "id": 6
     }
   ]
 }

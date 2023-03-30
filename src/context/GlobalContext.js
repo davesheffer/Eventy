@@ -38,8 +38,8 @@ export function GlobalProvider({ children }) {
     useEffect(() => {
         fetchEvents().then(events => setEvents(events));
         fetchUsers().then(users => setUsers(users));
-        fetchCategories().then(categories => setCategories(categories));
         fetchLocations().then(locations => setLocations(locations));
+        fetchCategories().then(categories => setCategories(categories));
     }, []);
 
     return (
