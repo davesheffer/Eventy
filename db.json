@@ -1,57 +1,71 @@
 {
-  "Events": [
-    {
-      "location": "asdsd",
-      "createdAt": "2023-03-29",
-      "category": "asdas",
-      "timing": "asdasd",
-      "id": 2
-    },
-    {
-      "location": "sfdsfs",
-      "createdAt": "2023-03-30",
-      "category": "sdfdsf",
-      "timing": "sfsdfsd",
-      "id": 3
-    }
-  ],
-  "Users": [
-    {
-      "initials": "DS",
-      "name": "dsad",
-      "email": "asd",
-      "mobile": "sasdsad",
-      "id": 14
-    }
-  ],
-  "Locations": [
-    {
-      "locationName": "yusimiti",
-      "id": 6,
-      "name": "adsad"
-    },
-    {
-      "locationName": "324234",
-      "id": 7
-    },
-    {
-      "locationName": "dfsdf",
-      "id": 8
-    },
-    {
-      "locationName": "דשגדשג",
-      "id": 9
-    }
-  ],
-  "Categories": [
-    {
-      "categoryName": "facebook",
-      "id": 5,
-      "editCategoryName": "dave sheffer"
-    },
-    {
-      "categoryName": "asdasd",
-      "id": 6
-    }
-  ]
+    "Events": [
+        {
+            "location": "asdsd",
+            "createdAt": "2023-03-29",
+            "category": "asdas",
+            "timing": "asdasd",
+            "id": 2
+        },
+        {
+            "location": "sfdsfs",
+            "createdAt": "2023-03-30",
+            "category": "sdfdsf",
+            "timing": "sfsdfsd",
+            "id": 3
+        }
+    ],
+    "Users": [
+        {
+            "initials": "DS",
+            "name": "dsad",
+            "email": "asd",
+            "mobile": "sasdsad",
+            "id": 14
+        },
+        {
+            "initials": "DS",
+            "name": "dsad",
+            "email": "asd",
+            "mobile": "sasdsad",
+            "id": 15
+        }
+    ],
+    "Locations": [
+        {
+            "locationName": "yusimiti",
+            "id": 6,
+            "name": "adsad"
+        },
+        {
+            "locationName": "324234",
+            "id": 7
+        },
+        {
+            "locationName": "dfsdf",
+            "id": 8
+        },
+        {
+            "locationName": "דשגדשג",
+            "id": 9
+        }
+    ],
+    "Categories": [
+        {
+            "categoryName": "fsdfsf",
+            "id": 5
+        },
+        {
+            "categoryName": "dave",
+            "id": 6
+        },
+        {
+            "categoryName": "dude",
+            "id": 7
+        },
+        {
+            "categoryName": "sdfsd",
+            "id": 8
+        }
+    ]
 }

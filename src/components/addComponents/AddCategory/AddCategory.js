@@ -1,36 +1,31 @@
 import { useState } from 'react';
 import { AiFillCloseSquare } from 'react-icons/ai';
 import classNames from 'classnames';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { addCategory } from '../../../services/categories';
 
-const AddCategory = ({
-    categories,
-    setCategories,
-    menuToggle,
-    setMenuToggle,
-}) => {
-    const lastId = categories[categories.length - 1]?.id || 0;
+const AddCategory = ({ menuToggle, setMenuToggle }) => {
+    const queryClient = useQueryClient();
+
+    const addCategoryMutate = useMutation({
+        mutationFn: addCategory,
+        onSuccess: () => {
+            // Invalidate and refetch
+            queryClient.invalidateQueries({ queryKey: ['categories'] });
+        },
+    });
+
     const [categoryName, setCategoryName] = useState('');
+    console.log(categoryName);
 
     const handleSubmit = async e => {
         e.preventDefault();
 
         const category = { categoryName };
 
-        await fetch('http://localhost:8000/Categories', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(category),
-        })
-            .then(() => {
-                setCategories([
-                    ...categories,
-                    (categories = { id: lastId + 1, ...category }),
-                ]);
-                setMenuToggle(false);
-                setCategoryName('');
-            })
-
-            .then(() => console.log(category));
+        addCategoryMutate.mutate({ ...category });
+        setMenuToggle(false);
+        setCategoryName('');
     };
 
     const menuToggleClasses = classNames(

@@ -28,8 +28,7 @@ const AddEvent = ({ events, setEvents, menuToggle, setMenuToggle }) => {
                 setTiming('');
                 setMenuToggle(false);
             })
-            .then(navigate('/'))
-            .then(() => console.log(event));
+            .then(navigate('/'));
     };
 
     const menuToggleClasses = classNames(

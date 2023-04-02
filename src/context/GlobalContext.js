@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { createContext, useEffect } from 'react';
 import classNames from 'classnames';
+import { useQuery } from '@tanstack/react-query';
 import { fetchCategories } from '../services/categories';
 import { fetchLocations } from '../services/locations';
 import { fetchEvents } from '../services/events';
@@ -9,7 +10,11 @@ import { fetchUsers } from '../services/users';
 const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
-    const [categories, setCategories] = useState([]);
+    const { data: categories, isLoading } = useQuery(
+        ['categories'],
+        fetchCategories
+    );
+
     const [locations, setLocations] = useState([]);
     const [events, setEvents] = useState([]);
     const [users, setUsers] = useState([]);
@@ -39,7 +44,7 @@ export function GlobalProvider({ children }) {
         fetchEvents().then(events => setEvents(events));
         fetchUsers().then(users => setUsers(users));
         fetchLocations().then(locations => setLocations(locations));
-        fetchCategories().then(categories => setCategories(categories));
+        // fetchCategories().then(categories => setCategories(categories));
     }, []);
 
     return (
@@ -50,7 +55,7 @@ export function GlobalProvider({ children }) {
                 users,
                 setUsers,
                 categories,
-                setCategories,
+                // setCategories,
                 locations,
                 setLocations,
                 loading,

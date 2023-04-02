@@ -2,7 +2,6 @@ import { useContext, useState } from 'react';
 import EditCategory from '../components/editComponents/EditCategory/EditCategory';
 import AddCategory from '../components/addComponents/AddCategory/AddCategory';
 import GlobalContext from '../context/GlobalContext';
-
 import { fetchCategory } from '../services/categories';
 import { AiFillDelete } from 'react-icons/ai';
 import { FiEdit } from 'react-icons/fi';
@@ -10,7 +9,6 @@ import { FiEdit } from 'react-icons/fi';
 const Categories = () => {
     const {
         categories,
-        setCategories,
         loading,
         error,
         menuToggle,
@@ -29,16 +27,16 @@ const Categories = () => {
             const newCategory = categories.filter(
                 category => category.id !== id
             );
-            setCategories(newCategory);
+            // setCategories(newCategory);
         });
     };
-
+    console.log(categories);
     return (
         <>
             {!editToggle ? (
                 <AddCategory
                     categories={categories}
-                    setCategories={setCategories}
+                    // setCategories={setCategories}
                     menuToggle={menuToggle}
                     setMenuToggle={setMenuToggle}
                 />
@@ -48,7 +46,7 @@ const Categories = () => {
                     editCategoryName={editCategoryName}
                     setEditCategoryName={setEditCategoryName}
                     fetchCategory={fetchCategory}
-                    setCategories={setCategories}
+                    // setCategories={setCategories}
                     menuToggle={menuToggle}
                     setMenuToggle={setMenuToggle}
                     category={category}
@@ -62,8 +60,8 @@ const Categories = () => {
                 <h1 className="text-2xl font-bold py-4">Categories</h1>
                 {loading && <div>Loading</div>}
                 {error && <div>Error</div>}
-                {categories.length <= 0 && <div> No Categories</div>}
-                {categories.map(category => {
+                {categories?.length <= 0 && <div> No Categories</div>}
+                {categories?.map(category => {
                     return (
                         <div
                             key={category.id}

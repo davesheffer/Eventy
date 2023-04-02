@@ -17,11 +17,9 @@ const Events = () => {
     const deleteEvent = id => {
         fetch(`http://localhost:8000/events/${id}`, {
             method: 'DELETE',
-        })
-            .then(() => {
-                setEvents([...events.filter(event => event.id !== id)]);
-            })
-            .then(() => console.log(events));
+        }).then(() => {
+            setEvents([...events.filter(event => event.id !== id)]);
+        });
     };
 
     return (

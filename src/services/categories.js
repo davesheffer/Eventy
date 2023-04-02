@@ -15,3 +15,16 @@ export const fetchCategory = async id => {
     const category = await res.json();
     return category;
 };
+
+export const addCategory = async category => {
+    const res = await fetch('http://localhost:8000/categories', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(category),
+    });
+    if (!res.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const newCategory = await res.json();
+    return newCategory;
+};

@@ -20,17 +20,14 @@ const AddLocation = ({
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(location),
-        })
-            .then(() => {
-                setLocations([
-                    ...locations,
-                    (locations = { id: lastId + 1, ...location }),
-                ]);
-                setMenuToggle(false);
-                setLocationName('');
-            })
-
-            .then(() => console.log(location));
+        }).then(() => {
+            setLocations([
+                ...locations,
+                (locations = { id: lastId + 1, ...location }),
+            ]);
+            setMenuToggle(false);
+            setLocationName('');
+        });
     };
 
     const menuToggleClasses = classNames(
