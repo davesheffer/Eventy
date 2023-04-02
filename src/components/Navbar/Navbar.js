@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsCalendar2Event } from 'react-icons/bs';
 import { useContext } from 'react';
+import { UserButton } from '@clerk/clerk-react';
 import GlobalContext from '../../context/GlobalContext';
 
 export default function Navbar() {
@@ -46,10 +47,11 @@ export default function Navbar() {
                     </ul>
                     <button
                         onClick={() => setMenuToggle(true)}
-                        className="rounded-lg bg-emerald-500 py-2 px-4 text-white"
+                        className="rounded-lg bg-emerald-500 py-2 px-4 mr-5 text-white"
                     >
                         +
                     </button>
+                    <UserButton />
                 </div>
             </div>
         </div>
