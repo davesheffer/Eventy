@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import classNames from 'classnames';
 import { AiFillCloseSquare } from 'react-icons/ai';
+import GlobalContext from '../../../context/GlobalContext';
 
 const AddEvent = ({ events, setEvents, menuToggle, setMenuToggle }) => {
+    const { categories } = useContext(GlobalContext);
     const [location, setLocation] = useState('');
     const [createdAt, setCreatedAt] = useState(moment().format('yyyy-MM-DD'));
     const [category, setCategory] = useState('');
@@ -48,6 +50,7 @@ const AddEvent = ({ events, setEvents, menuToggle, setMenuToggle }) => {
             'translate-x-full': !menuToggle,
         }
     );
+    console.log(categories);
     return (
         <div className={menuToggleClasses}>
             <h1 className="text-4xl font-bold mb-4 ">Add Event</h1>
@@ -69,13 +72,25 @@ const AddEvent = ({ events, setEvents, menuToggle, setMenuToggle }) => {
                     value={createdAt}
                     onChange={e => setCreatedAt(e.target.value)}
                 />
-                <input
+                <select
+                    name="categories"
+                    id="categories"
                     className="p-2 mb-4"
-                    type="text"
-                    placeholder="Category"
-                    value={category}
+                    defaultValue="Select Category"
                     onChange={e => setCategory(e.target.value)}
-                />
+                >
+                    <option value="" disabled selected>
+                        Choose a category
+                    </option>
+                    {categories?.map(cat => {
+                        return (
+                            <option value="" key={cat.id}>
+                                {cat.categoryName}
+                            </option>
+                        );
+                    })}
+                </select>
+
                 <input
                     className="p-2 mb-4"
                     type="text"
