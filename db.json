@@ -1,18 +1,18 @@
 {
   "Events": [
     {
-      "location": "asdsd",
-      "createdAt": "2023-03-29",
-      "category": "asdas",
-      "timing": "asdasd",
-      "id": 2
+      "location": "fdgdf",
+      "createdAt": "2023-04-03",
+      "category": "im the best",
+      "timing": "dfgfd",
+      "id": 6
     },
     {
-      "location": "sfdsfs",
-      "createdAt": "2023-03-30",
-      "category": "sdfdsf",
-      "timing": "sfsdfsd",
-      "id": 3
+      "location": "yusimiti",
+      "createdAt": "2023-04-03",
+      "category": "dave",
+      "timing": "dasdas",
+      "id": 7
     }
   ],
   "Users": [
@@ -34,8 +34,7 @@
   "Locations": [
     {
       "locationName": "yusimiti",
-      "id": 6,
-      "name": "adsad"
+      "id": 6
     },
     {
       "locationName": "324234",
@@ -51,10 +50,6 @@
     }
   ],
   "Categories": [
-    {
-      "categoryName": "fsdfsf",
-      "id": 5
-    },
     {
       "categoryName": "dave",
       "id": 6

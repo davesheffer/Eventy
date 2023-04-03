@@ -45,6 +45,7 @@ export function GlobalProvider({ children }) {
         fetchUsers().then(users => setUsers(users));
         fetchLocations().then(locations => setLocations(locations));
         // fetchCategories().then(categories => setCategories(categories));
+        console.log(locations);
     }, []);
 
     return (
