@@ -1,8 +1,8 @@
-import AddUser from '../components/addComponents/AddUser/AddUser';
+import AddUser from './AddUser';
 import classNames from 'classnames';
 import { AiFillDelete } from 'react-icons/ai';
 import { useContext } from 'react';
-import GlobalContext from '../context/GlobalContext';
+import GlobalContext from '../../context/GlobalContext';
 
 const Users = () => {
     const { users, setUsers, loading, error, menuToggle, setMenuToggle } =

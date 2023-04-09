@@ -1,26 +1,33 @@
-import { useContext, useState } from 'react';
-import GlobalContext from '../../../context/GlobalContext';
+import { useContext } from 'react';
+import GlobalContext from '../../context/GlobalContext';
 import { AiFillCloseSquare } from 'react-icons/ai';
 import classNames from 'classnames';
 
-const EditCategory = ({ category, setCategory, setEditToggle }) => {
-    const { categories, setCategories, menuToggle, setMenuToggle } =
+const EditLocation = ({
+    location,
+    locationName,
+    setLocationName,
+    setEditToggle,
+}) => {
+    const { locations, setLocations, menuToggle, setMenuToggle } =
         useContext(GlobalContext);
 
     const handleSubmit = async e => {
         e.preventDefault();
 
-        await fetch(`http://localhost:8000/categories/${category.id}`, {
+        const updatedLocation = { id: location.id, locationName: locationName };
+
+        await fetch(`http://localhost:8000/locations/${location.id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(category),
+            body: JSON.stringify(updatedLocation),
         });
 
-        const index = categories.findIndex(l => l.id === category.id);
-        const newCategories = [...categories];
-        newCategories[index] = category;
+        const index = locations.findIndex(l => l.id === updatedLocation.id);
+        const newLocations = [...locations];
+        newLocations[index] = updatedLocation;
 
-        setCategories(newCategories);
+        setLocations(newLocations);
         setMenuToggle(false);
         setEditToggle(false);
     };
@@ -43,7 +50,7 @@ const EditCategory = ({ category, setCategory, setEditToggle }) => {
     );
     return (
         <div className={menuToggleClasses}>
-            <h1 className="text-4xl font-bold mb-4 ">Edit Category</h1>
+            <h1 className="text-4xl font-bold mb-4 ">Edit Location</h1>
             <AiFillCloseSquare
                 className="absolute right-4 top-4 text-4xl  cursor-pointer text-emerald-500 "
                 onClick={() => {
@@ -56,13 +63,8 @@ const EditCategory = ({ category, setCategory, setEditToggle }) => {
                     className="p-2 mb-4"
                     type="text"
                     placeholder="Name"
-                    defaultValue={category.categoryName}
-                    onChange={e =>
-                        setCategory({
-                            id: category.id,
-                            categoryName: e.target.value,
-                        })
-                    }
+                    value={locationName}
+                    onChange={e => setLocationName(e.target.value)}
                 />
 
                 <button className="bg-emerald-500 py-4 font-bold text-white">
@@ -73,4 +75,4 @@ const EditCategory = ({ category, setCategory, setEditToggle }) => {
     );
 };
 
-export default EditCategory;
+export default EditLocation;

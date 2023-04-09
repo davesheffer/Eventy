@@ -10,13 +10,10 @@ import { fetchUsers } from '../services/users';
 const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
-    const { data: categories, isLoading } = useQuery(
-        ['categories'],
-        fetchCategories
-    );
+    const { data: categories } = useQuery(['categories'], fetchCategories);
+    const { data: events } = useQuery(['events'], fetchEvents);
+    const { data: locations } = useQuery(['locations'], fetchLocations);
 
-    const [locations, setLocations] = useState([]);
-    const [events, setEvents] = useState([]);
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -41,24 +38,17 @@ export function GlobalProvider({ children }) {
     );
 
     useEffect(() => {
-        fetchEvents().then(events => setEvents(events));
         fetchUsers().then(users => setUsers(users));
-        fetchLocations().then(locations => setLocations(locations));
-        // fetchCategories().then(categories => setCategories(categories));
-        console.log(locations);
     }, []);
 
     return (
         <GlobalContext.Provider
             value={{
-                events,
-                setEvents,
                 users,
                 setUsers,
+                events,
                 categories,
-                // setCategories,
                 locations,
-                setLocations,
                 loading,
                 setLoading,
                 error,

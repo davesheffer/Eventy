@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAddEvent } from '../../queries/events';
 import moment from 'moment';
 import classNames from 'classnames';
 import { AiFillCloseSquare } from 'react-icons/ai';
-import GlobalContext from '../../../context/GlobalContext';
+import GlobalContext from '../../context/GlobalContext';
 
 const AddEvent = ({ events, setEvents, menuToggle, setMenuToggle }) => {
     const { categories, locations } = useContext(GlobalContext);
@@ -12,25 +13,19 @@ const AddEvent = ({ events, setEvents, menuToggle, setMenuToggle }) => {
     const [category, setCategory] = useState('');
     const [timing, setTiming] = useState('');
     const lastId = events[events.length - 1]?.id || 0;
+    const { mutate: addEvent } = useAddEvent();
     const navigate = useNavigate();
     const handleSubmit = e => {
         e.preventDefault();
-        const event = { location, createdAt, category, timing };
+        const event = { location, createdAt, category, timing, status: 'open' };
 
-        fetch('http://localhost:8000/events', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(event),
-        })
-            .then(() => {
-                setEvents([...events, (events = { id: lastId + 1, ...event })]);
-                setLocation('');
-                setCreatedAt(moment().format('yyyy-MM-DD'));
-                setCategory('');
-                setTiming('');
-                setMenuToggle(false);
-            })
-            .then(navigate('/'));
+        addEvent(event);
+        setLocation('');
+        setCreatedAt(moment().format('yyyy-MM-DD'));
+        setCategory('');
+        setTiming('');
+        setMenuToggle(false);
+        navigate('/');
     };
 
     const menuToggleClasses = classNames(
@@ -50,7 +45,7 @@ const AddEvent = ({ events, setEvents, menuToggle, setMenuToggle }) => {
             'translate-x-full': !menuToggle,
         }
     );
-    console.log(category);
+
     return (
         <div className={menuToggleClasses}>
             <h1 className="text-4xl font-bold mb-4 ">Add Event</h1>

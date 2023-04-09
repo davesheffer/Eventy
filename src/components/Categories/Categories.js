@@ -1,8 +1,10 @@
 import { useContext, useState } from 'react';
-import EditCategory from '../components/editComponents/EditCategory/EditCategory';
-import AddCategory from '../components/addComponents/AddCategory/AddCategory';
-import GlobalContext from '../context/GlobalContext';
-import { fetchCategory } from '../services/categories';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import GlobalContext from '../../context/GlobalContext';
+import { fetchCategory } from '../../services/categories';
+import { deleteCategory } from '../../services/categories';
+import EditCategory from './EditCategory';
+import AddCategory from './AddCategory';
 import { AiFillDelete } from 'react-icons/ai';
 import { FiEdit } from 'react-icons/fi';
 
@@ -18,35 +20,28 @@ const Categories = () => {
 
     const [category, setCategory] = useState({});
     const [editToggle, setEditToggle] = useState(false);
-    const [editCategoryName, setEditCategoryName] = useState('');
 
-    const deleteCategory = id => {
-        fetch(`http://localhost:8000/Categories/${id}`, {
-            method: 'DELETE',
-        }).then(() => {
-            const newCategory = categories.filter(
-                category => category.id !== id
-            );
-            // setCategories(newCategory);
-        });
-    };
-    console.log(categories);
+    const queryClient = useQueryClient();
+
+    const deleteCategoryMutation = useMutation(deleteCategory, {
+        onSuccess: () => {
+            queryClient.invalidateQueries('categories');
+            setMenuToggle(false);
+        },
+    });
+
     return (
         <>
             {!editToggle ? (
                 <AddCategory
                     categories={categories}
-                    // setCategories={setCategories}
                     menuToggle={menuToggle}
                     setMenuToggle={setMenuToggle}
                 />
             ) : (
                 <EditCategory
                     categories={categories}
-                    editCategoryName={editCategoryName}
-                    setEditCategoryName={setEditCategoryName}
                     fetchCategory={fetchCategory}
-                    // setCategories={setCategories}
                     menuToggle={menuToggle}
                     setMenuToggle={setMenuToggle}
                     category={category}
@@ -71,7 +66,11 @@ const Categories = () => {
                             <div className="icons-container flex opacity-0 group-hover:opacity-100">
                                 <AiFillDelete
                                     className="text-2xl ml-[150px] cursor-pointer hover:text-emerald-600"
-                                    onClick={() => deleteCategory(category.id)}
+                                    onClick={() =>
+                                        deleteCategoryMutation.mutate(
+                                            category.id
+                                        )
+                                    }
                                 />
                                 <FiEdit
                                     onClick={() => {
@@ -80,7 +79,6 @@ const Categories = () => {
                                                 setCategory(data);
                                             }
                                         );
-
                                         setEditToggle(true);
                                         setMenuToggle(true);
                                     }}

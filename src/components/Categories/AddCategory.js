@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AiFillCloseSquare } from 'react-icons/ai';
 import classNames from 'classnames';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { addCategory } from '../../../services/categories';
+import { addCategory } from '../../services/categories';
 
 const AddCategory = ({ menuToggle, setMenuToggle }) => {
     const queryClient = useQueryClient();
@@ -16,7 +16,6 @@ const AddCategory = ({ menuToggle, setMenuToggle }) => {
     });
 
     const [categoryName, setCategoryName] = useState('');
-    console.log(categoryName);
 
     const handleSubmit = async e => {
         e.preventDefault();

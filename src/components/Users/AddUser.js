@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { AiFillCloseSquare } from 'react-icons/ai';
 import classNames from 'classnames';
 import { useContext } from 'react';
-import GlobalContext from '../../../context/GlobalContext';
+import GlobalContext from '../../context/GlobalContext';
 
 const AddUser = () => {
     const { menuToggle, setMenuToggle, users, setUsers } =

@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
-import AddLocation from '../components/addComponents/AddLocation/AddLocation';
-import EditLocation from '../components/editComponents/EditLocation/EditLocation';
-import GlobalContext from '../context/GlobalContext';
-import { fetchLocation } from '../services/locations';
+import AddLocation from './AddLocation';
+import EditLocation from './EditLocation';
+import GlobalContext from '../../context/GlobalContext';
+import { fetchLocation } from '../../services/locations';
 import { AiFillDelete } from 'react-icons/ai';
 import { FiEdit } from 'react-icons/fi';
 
@@ -61,7 +61,10 @@ const Locations = () => {
                 {locations.length <= 0 && <div> No Locations</div>}
                 {locations.map(location => {
                     return (
-                        <div className="group py-2 flex items-center justify-between border border-b-gray-900">
+                        <div
+                            key={location.id}
+                            className="group py-2 flex items-center justify-between border border-b-gray-900"
+                        >
                             <h1>{location.locationName}</h1>
                             <div className="icons-container flex opacity-0 group-hover:opacity-100">
                                 <AiFillDelete

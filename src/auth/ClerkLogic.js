@@ -7,10 +7,10 @@ import {
     RedirectToSignIn,
 } from '@clerk/clerk-react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import Events from '../pages/Events';
-import Users from '../pages/Users';
-import Locations from '../pages/Locations';
-import Categories from '../pages/Categories';
+import Events from '../components/Events/Events';
+import Users from '../components/Users/Users';
+import Locations from '../components/Locations/Locations';
+import Categories from '../components/Categories/Categories';
 import Navbar from '../components/Navbar/Navbar';
 const clerk_pub_key = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 

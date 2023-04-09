@@ -28,3 +28,26 @@ export const addCategory = async category => {
     const newCategory = await res.json();
     return newCategory;
 };
+export const deleteCategory = async id => {
+    const res = await fetch(`http://localhost:8000/categories/${id}`, {
+        method: 'DELETE',
+    });
+    if (!res.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const newCategory = await res.json();
+    return newCategory;
+};
+
+export const updateCategory = async category => {
+    const res = await fetch(`http://localhost:8000/categories/${category.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(category),
+    });
+    if (!res.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const newCategory = await res.json();
+    return newCategory;
+};

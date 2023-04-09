@@ -1,35 +1,22 @@
-import { useState, useContext } from 'react';
-import GlobalContext from '../../../context/GlobalContext';
+import { useContext } from 'react';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { updateCategory } from '../../services/categories';
+import GlobalContext from '../../context/GlobalContext';
 import { AiFillCloseSquare } from 'react-icons/ai';
 import classNames from 'classnames';
 
-const EditLocation = ({
-    location,
-    locationName,
-    setLocationName,
-    setEditToggle,
-}) => {
-    const { locations, setLocations, menuToggle, setMenuToggle } =
-        useContext(GlobalContext);
-
+const EditCategory = ({ category, setCategory, setEditToggle }) => {
+    const { menuToggle, setMenuToggle } = useContext(GlobalContext);
+    const queryClient = useQueryClient();
+    const updateCategoryMutation = useMutation(updateCategory, {
+        onSuccess: () => {
+            setMenuToggle(false);
+            queryClient.invalidateQueries({ queryKey: ['categories'] });
+        },
+    });
     const handleSubmit = async e => {
         e.preventDefault();
-
-        const updatedLocation = { id: location.id, locationName: locationName };
-
-        await fetch(`http://localhost:8000/locations/${location.id}`, {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(updatedLocation),
-        });
-
-        const index = locations.findIndex(l => l.id === updatedLocation.id);
-        const newLocations = [...locations];
-        newLocations[index] = updatedLocation;
-
-        setLocations(newLocations);
-        setMenuToggle(false);
-        setEditToggle(false);
+        updateCategoryMutation.mutate(category);
     };
     const menuToggleClasses = classNames(
         'fixed',
@@ -50,7 +37,7 @@ const EditLocation = ({
     );
     return (
         <div className={menuToggleClasses}>
-            <h1 className="text-4xl font-bold mb-4 ">Edit Location</h1>
+            <h1 className="text-4xl font-bold mb-4 ">Edit Category</h1>
             <AiFillCloseSquare
                 className="absolute right-4 top-4 text-4xl  cursor-pointer text-emerald-500 "
                 onClick={() => {
@@ -63,8 +50,13 @@ const EditLocation = ({
                     className="p-2 mb-4"
                     type="text"
                     placeholder="Name"
-                    value={locationName}
-                    onChange={e => setLocationName(e.target.value)}
+                    defaultValue={category.categoryName}
+                    onChange={e =>
+                        setCategory({
+                            id: category.id,
+                            categoryName: e.target.value,
+                        })
+                    }
                 />
 
                 <button className="bg-emerald-500 py-4 font-bold text-white">
@@ -75,4 +67,4 @@ const EditLocation = ({
     );
 };
 
-export default EditLocation;
+export default EditCategory;
