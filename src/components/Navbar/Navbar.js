@@ -3,19 +3,23 @@ import { Link } from 'react-router-dom';
 import { BsCalendar2Event } from 'react-icons/bs';
 import { useContext } from 'react';
 import { UserButton } from '@clerk/clerk-react';
+import StatusBar from '../StatusBar/StatusBar';
 import GlobalContext from '../../context/GlobalContext';
 
 export default function Navbar() {
     const { setMenuToggle } = useContext(GlobalContext);
 
     return (
-        <div className="bg-slate-200 shadow-md">
+        <div className="bg-slate-200 shadow-md h-[70px]">
             <div className="container py-4 mx-auto flex justify-between items-center">
-                <div className="logo flex items-center text-3xl text-emerald-500">
-                    <BsCalendar2Event />
-                    <h1 className="font-bold text-3xl ml-2 text-emerald-500">
-                        Eventy
-                    </h1>
+                <div className="flex">
+                    <div className="logo flex items-center text-3xl text-emerald-500">
+                        <BsCalendar2Event />
+                        <h1 className="font-bold text-3xl ml-2 text-emerald-500">
+                            Eventy
+                        </h1>
+                    </div>
+                    <StatusBar />
                 </div>
 
                 <div className="flex flex-row items-center">

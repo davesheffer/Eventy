@@ -21,7 +21,7 @@ export function GlobalProvider({ children }) {
 
     const menuToggleClasses = classNames(
         'p-4',
-        'h-screen',
+        'h-100',
         'absolute',
         'bg-gray-600',
         'transition-all',

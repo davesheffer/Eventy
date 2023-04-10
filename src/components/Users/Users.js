@@ -17,7 +17,7 @@ const Users = () => {
     };
     const menuToggleClasses = classNames(
         'p-4',
-        'h-screen',
+        'h-full',
         'absolute',
         'bg-gray-600',
         'transition-all',

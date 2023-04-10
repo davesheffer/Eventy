@@ -21,14 +21,14 @@ const ClerkLogic = () => {
             publishableKey={clerk_pub_key}
             navigate={to => navigate(to)}
         >
-            <div className="App relative">
+            <div className="App h-screen">
                 <SignedOut>
                     <RedirectToSignIn />
                 </SignedOut>
                 <SignedIn>
                     <Navbar />
                 </SignedIn>
-                <main>
+                <main className="h-[600px]">
                     <Routes>
                         <Route
                             path="/sign-in/*"
