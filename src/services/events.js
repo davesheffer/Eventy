@@ -6,6 +6,14 @@ export const fetchEvents = async () => {
     const events = await res.json();
     return events;
 };
+export const fetchEvent = async id => {
+    const res = await fetch(`http://localhost:8000/events/${id}`);
+    if (!res.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const event = await res.json();
+    return event;
+};
 
 // Delete Event
 export const deleteEvent = async id => {

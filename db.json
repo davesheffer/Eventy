@@ -1,5 +1,30 @@
 {
-  "Events": [],
+  "Events": [
+    {
+      "location": "location 2",
+      "createdAt": "2023-04-10",
+      "category": "im the best",
+      "timing": "fdgdf",
+      "status": "close",
+      "id": 1
+    },
+    {
+      "location": "location 2",
+      "createdAt": "2023-04-10",
+      "category": "im the best",
+      "timing": "fgfdg",
+      "status": "close",
+      "id": 2
+    },
+    {
+      "location": "location1",
+      "createdAt": "2023-04-10",
+      "category": "im the best",
+      "timing": "trtr",
+      "status": "open",
+      "id": 3
+    }
+  ],
   "Users": [
     {
       "initials": "DS",
