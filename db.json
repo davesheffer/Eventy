@@ -1,72 +1,65 @@
 {
-  "Events": [
-    {
-      "location": "location 2",
-      "createdAt": "2023-04-10",
-      "category": "im the best",
-      "timing": "fdgdf",
-      "status": "close",
-      "id": 1
-    },
-    {
-      "location": "location 2",
-      "createdAt": "2023-04-10",
-      "category": "im the best",
-      "timing": "fgfdg",
-      "status": "close",
-      "id": 2
-    },
-    {
-      "location": "location1",
-      "createdAt": "2023-04-10",
-      "category": "im the best",
-      "timing": "trtr",
-      "status": "open",
-      "id": 3
-    }
-  ],
-  "Users": [
-    {
-      "initials": "DS",
-      "name": "dsad",
-      "email": "asd",
-      "mobile": "sasdsad",
-      "id": 14
-    },
-    {
-      "initials": "DS",
-      "name": "dsad",
-      "email": "asd",
-      "mobile": "sasdsad",
-      "id": 15
-    }
-  ],
-  "Locations": [
-    {
-      "locationName": "location1",
-      "id": 6
-    },
-    {
-      "locationName": "location 2",
-      "id": 7
-    },
-    {
-      "locationName": "location 3",
-      "id": 8
-    },
-    {
-      "locationName": "location 4",
-      "id": 9
-    }
-  ],
-  "Categories": [
-    {
-      "categoryName": "im the best",
-      "id": 9
-    },
-    {
-      "categoryName": "dave sheffer",
-      "id": 10
-    }
-  ]
+    "Events": [
+        {
+            "location": "location 2",
+            "createdAt": "2023-04-10",
+            "category": "im the best",
+            "timing": "fdgdf",
+            "status": "close",
+            "id": 1
+        },
+        {
+            "location": "location 2",
+            "createdAt": "2023-04-10",
+            "category": "im the best",
+            "timing": "fgfdg",
+            "status": "close",
+            "id": 2
+        },
+        {
+            "location": "location1",
+            "createdAt": "2023-04-10",
+            "category": "im the best",
+            "timing": "trtr",
+            "status": "close",
+            "id": 3
+        },
+        {
+            "location": "location1",
+            "createdAt": "2023-04-13",
+            "category": "im the best",
+            "timing": "sdfsdf",
+            "status": "close",
+            "id": 4
+        }
+    ],
+    "Users": [],
+    "Locations": [
+        {
+            "locationName": "location1",
+            "id": 6
+        },
+        {
+            "locationName": "location 2",
+            "id": 7
+        },
+        {
+            "locationName": "location 3",
+            "id": 8
+        },
+        {
+            "locationName": "location 4",
+            "id": 9
+        }
+    ],
+    "Categories": [
+        {
+            "categoryName": "im the best",
+            "id": 9
+        },
+        {
+            "categoryName": "dave sheffer",
+            "id": 10
+        }
+    ]
 }

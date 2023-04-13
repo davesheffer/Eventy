@@ -71,13 +71,13 @@ const Event = ({ id, location, createdAt, timing, category, status }) => {
                     />
                 )}
                 <FiEdit
-                    onClick={() => {
-                        fetchCategory(category.id).then(data => {
-                            setCategory(data);
-                        });
-                        setEditToggle(true);
-                        setMenuToggle(true);
-                    }}
+                    // onClick={() => {
+                    //     fetchCategory(category.id).then(data => {
+                    //         setCategory(data);
+                    //     });
+                    //     setEditToggle(true);
+                    //     setMenuToggle(true);
+                    // }}
                     className="text-xl ml-4 cursor-pointer hover:text-emerald-600"
                 />
             </div>
